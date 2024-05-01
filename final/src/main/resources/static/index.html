@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="shortcut icon" href="#">
+    <meta charset="UTF-8">
+    <title>kinobilleter</title>
+</head>
+<body>
+<script src="billett.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h1> Bestilling av kinobilletter.</h1>
+            <form class="form">
+                <div class="form-group">
+                    <label for="film" class="dropdown">Film</label>
+                    <select id="film" class="drop-down">
+                        <option value="Haunted">Haunted</option>
+                        <option value="Inside Out">Inside Out</option>
+                        <option value="When Marnie was there">When Marnie was there</option>
+                        <option value="Queen of tears">Queen of tears</option>
+                        <option value="Totoro">Totoro</option>
+                        <option value="Spiderman">Spiderman</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last name</label>
+                    <input id="lname" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="fname">First name</label>
+                    <input id="fname" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="phonenr">Phone number</label>
+                    <input id="phonenr" type="tel" maxlength="8">
+
+                </div>
+                <div class="form-group">
+                    <label for="epost">Epost</label>
+                    <input id="epost" type="email">
+                </div>
+                <div class="form-group">
+                    <label for="quantity">quantity</label>
+                    <input  id="quantity" type="text" maxlength="2">
+                </div>
+            </form>
+            <button class="btn btn-primary" onclick="regBillett()">register billett</button>
+        </div>
+        <div class="col-md-8">
+            <div>
+            <button class="btn btn-success" onclick="hentAlle()">Hent alle billetter</button>
+            </div>
+            <h2>Alle billetene:</h2>
+            <div id="ordre" class="table-responsive"></div>
+            <br>
+
+            <button class="btn btn-danger" onclick="slettAlle()">Slett alle billetene</button>
+        </div>
+    </div>
+    <div>
+        <h2> Oppdater valgt billett</h2>
+        <p>ID:</p><p id="idBillett"></p>
+        <label>Last name</label><br>
+        <input type="text" id="lnameEdit"><br>
+        <label>First name</label><br>
+        <input type="text" id="fnameEdit"><br>
+        <label>Phone nr</label><br>
+        <input type="tel" id="phonenrEdit" ><br>
+        <label>Epost</label><br>
+        <input type="email" id="epostEdit"><br>
+        <label>quantity</label><br>
+        <input type="text" id="quantityEdit" ><br>
+        <label>Film</label><br>
+        <input type="text" id="filmEdit">
+        <br>
+        <button onclick="updateBillettInD()">Update</button>
+        <br>
+    </div>
+</div>
+
+</body>
+</html>
